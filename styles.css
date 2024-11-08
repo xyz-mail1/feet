@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-y: auto; /* Allow vertical scroll if needed */
+}
+
+#imageGallery {
+  display: flex; /* Use Flexbox to arrange columns horizontally */
+  justify-content: flex-start; /* Align items at the top left */
+  width: 90vw; /* Gallery width at 90% of the viewport */
+  max-width: 1400px; /* Maximum gallery width */
+  padding: 0; /* No padding around gallery */
+  gap: 10px; /* Adds space between the columns */
+}
+
+.imageColumn {
+  display: flex; /* Each column is a flex container */
+  flex-direction: column; /* Stack images vertically inside the column */
+  width: calc(
+    25% - 10px
+  ); /* Each column takes up 25% of the container width, minus gap space */
+}
+
+#imageGallery img {
+  width: 100%; /* Make images take up the full width of the column */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure image fits inside the cell without cropping */
+  display: block; /* Prevent extra bottom space */
+  margin: 0; /* Remove margin between images */
+  border-radius: 0; /* No rounded corners */
+}
